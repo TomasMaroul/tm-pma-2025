@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="#4CAF50"
+    android:gravity="center_vertical"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/ivToastIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_marginEnd="8dp"
+        app:tint="#FFFFFF"
+        xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+    <TextView
+        android:id="@+id/tvToastMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Úspěch!"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+</LinearLayout>
