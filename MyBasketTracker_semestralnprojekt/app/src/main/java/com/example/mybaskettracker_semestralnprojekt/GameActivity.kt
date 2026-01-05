@@ -1,10 +1,10 @@
-package com.example.mybaskettracker_semestralniprojekt // <--- ZMĚNA ZDE
+package com.example.mybaskettracker_semestralniprojekt
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-// Import musí odpovídat novému názvu balíčku
+
 import com.example.mybaskettracker_semestralniprojekt.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {

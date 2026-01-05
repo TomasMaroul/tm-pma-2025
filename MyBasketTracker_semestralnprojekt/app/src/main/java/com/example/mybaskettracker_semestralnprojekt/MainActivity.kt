@@ -1,4 +1,4 @@
-package com.example.mybaskettracker_semestralniprojekt // <--- ZMĚNA ZDE
+package com.example.mybaskettracker_semestralniprojekt
 
 import android.content.Intent
 import android.net.Uri
@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-// Import musí odpovídat novému názvu balíčku
+
 import com.example.mybaskettracker_semestralniprojekt.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSelectLogo.setOnClickListener {
             pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
+
+        binding.btnHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnStartGame.setOnClickListener {

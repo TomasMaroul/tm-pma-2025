@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBasketTracker_semestralníProjekt">
         <activity
+            android:name="com.example.mybaskettracker_semestralnprojekt.HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.mybaskettracker_semestralnprojekt.ResultActivity"
             android:exported="false" />
         <activity
