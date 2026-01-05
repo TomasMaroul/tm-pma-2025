@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/ivGameHomeLogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:background="#EEEEEE"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VS"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvHomeNameGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DOMÁCÍ"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvHomeScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="80sp"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnHome1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 (Trestný)"/>
+
+            <Button
+                android:id="@+id/btnHome2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 (Koš)"/>
+
+            <Button
+                android:id="@+id/btnHome3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 (Trojka)"
+                android:backgroundTint="#FF9800"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#CCCCCC"
+            android:layout_marginHorizontal="10dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvAwayNameGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOSTÉ"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvAwayScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="80sp"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnAway1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 (Trestný)"/>
+
+            <Button
+                android:id="@+id/btnAway2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 (Koš)"/>
+
+            <Button
+                android:id="@+id/btnAway3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 (Trojka)"
+                android:backgroundTint="#FF9800"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEndGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UKONČIT ZÁPAS 🏁"
+        android:backgroundTint="#D32F2F"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+
+</LinearLayout>

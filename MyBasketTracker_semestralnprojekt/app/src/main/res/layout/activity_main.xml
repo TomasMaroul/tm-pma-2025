@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏀 Streetball Setup"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:id="@+id/ivTeamLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:background="#EEEEEE"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeader"/>
+
+        <Button
+            android:id="@+id/btnSelectLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vybrat logo týmu"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivTeamLogo"/>
+
+        <EditText
+            android:id="@+id/etHomeTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Název domácího týmu (My)"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectLogo"/>
+
+        <EditText
+            android:id="@+id/etAwayTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Název hostů (Oni)"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/etHomeTeam"/>
+
+        <Button
+            android:id="@+id/btnStartGame"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="ZAČÍT ZÁPAS ⛹️‍♂️"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FF9800"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/etAwayTeam"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
