@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ahoj!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#B00020"/> <TextView
+    android:id="@+id/tvCountdown"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="Načítám odpočet..."
+    android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvWish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Tvé přání se brzy splní"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+</LinearLayout>
