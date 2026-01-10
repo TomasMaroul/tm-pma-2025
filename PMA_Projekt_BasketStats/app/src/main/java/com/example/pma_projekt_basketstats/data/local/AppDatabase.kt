@@ -1,11 +1,12 @@
-package data
+package com.example.pma_projekt_basketstats.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.pma_projekt_basketstats.data.model.Match
 
-@Database(entities = [Match::class], version = 1, exportSchema = false)
+@Database(entities = [Match::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun matchDao(): MatchDao
 
@@ -19,7 +20,9 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "basket_database"
-                ).build()
+                )
+                .fallbackToDestructiveMigration()
+                .build()
                 INSTANCE = instance
                 instance
             }

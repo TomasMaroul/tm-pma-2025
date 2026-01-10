@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,35 +14,70 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvTeams"
+            android:id="@+id/tvHomeTeam"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Týmy"
-            android:textSize="18sp"
+            android:text="Home Team"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+            app:layout_constraintEnd_toStartOf="@+id/tvScore"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAwayTeam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Away Team"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvScore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHomeTeam" />
 
         <TextView
             android:id="@+id/tvScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0 : 0"
-            android:textColor="#6200EE"
-            android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTeams" />
+            android:text="88 : 75"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnEdit"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="16dp"/>
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tvStatsSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FG%: 45% | 3PT: 33%"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAwayTeam"
+            android:layout_marginTop="4dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

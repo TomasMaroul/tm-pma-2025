@@ -1,98 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nový zápas"
-            android:textSize="24sp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
             android:layout_gravity="center"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/etHomeTeam"
+        <!-- Teams Selection -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Domácí tým" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
 
-        <EditText
-            android:id="@+id/etAwayTeam"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Týmy"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerHomeTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerAwayTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Score Section -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hostující tým"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Typ zápasu:" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <RadioGroup
-            android:id="@+id/rgMatchType"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skóre"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Domácí">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etHomeScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Hosté">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAwayScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats Section (Shooting) -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-            <RadioButton
-                android:id="@+id/rbFriendly"
-                android:layout_width="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Přátelák"
-                android:checked="true" />
-            <RadioButton
-                android:id="@+id/rbLeague"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ligový zápas" />
-        </RadioGroup>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/ivTypeIcon"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:src="@android:drawable/btn_star_big_on"
-            android:layout_marginBottom="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Střelba (Dali / Vystřelili)"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
 
-        <CheckBox
-            android:id="@+id/cbOvertime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hrálo se prodloužení?" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Domácí - FG a 3PT"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <EditText android:id="@+id/etHomeFGMade" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="FG+" android:inputType="number"/>
+                    <EditText android:id="@+id/etHomeFGAtt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="FG celkem" android:inputType="number"/>
+                    <EditText android:id="@+id/etHome3PMade" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="3PT+" android:inputType="number"/>
+                    <EditText android:id="@+id/etHome3PAtt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="3PT celkem" android:inputType="number"/>
+                </LinearLayout>
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hosté - FG a 3PT"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText android:id="@+id/etAwayFGMade" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="FG+" android:inputType="number"/>
+                    <EditText android:id="@+id/etAwayFGAtt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="FG celkem" android:inputType="number"/>
+                    <EditText android:id="@+id/etAway3PMade" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="3PT+" android:inputType="number"/>
+                    <EditText android:id="@+id/etAway3PAtt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="3PT celkem" android:inputType="number"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Scorers -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-            <EditText
-                android:id="@+id/etHomeScore"
-                android:layout_width="0dp"
+            android:layout_marginBottom="24dp"
+            android:hint="Kdo skóroval (poznámky)"
+            app:boxBackgroundColor="@android:color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etScorers"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Body domácí"
-                android:inputType="number" />
-            <EditText
-                android:id="@+id/etAwayScore"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Body hosté"
-                android:inputType="number" />
-        </LinearLayout>
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnSaveMatch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Uložit zápas" />
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Uložit zápas"
+            android:textSize="18sp"
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 </ScrollView>
